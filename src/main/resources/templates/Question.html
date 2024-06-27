@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyemeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Question</title>
+</head>
+<body>
+    <table>
+        <tr >
+            <th>Id</th>
+            <th>Category</th>
+            <th>Question Title</th>
+            <th>Option1</th>
+            <th>Option2</th>
+            <th>Option3</th>
+            <th>Option4</th>
+            <th>Right Answer</th>
+        </tr>
+        <tr th:each ="question: ${allQuestions}">
+            <td th:text="${question.id}">Id</td>
+            <td th:text="${question.category}">Category</td>
+            <td th:text="${question.questionTitle}">Question Title</td>
+            <td th:text="${question.option1}">Option1</td>
+            <td th:text="${question.option2}">Option2</td>
+            <td th:text="${question.option3}">Option3</td>
+            <td th:text="${question.option4}">Option4</td>
+            <td th:text="${question.rightAnswer}">Right Answer</td>
+            <td><a th:href="@{'/question/delete/' +${question.id}}">Delete</a></td>
+            <td><a th:href="@{'/question/edit/' +${question.id}}">Edit</a></td>
+
+        </tr>
+    </table>
+
+    <a href="/question/addQuestion">Add questions</a>
+</body>
+</html>

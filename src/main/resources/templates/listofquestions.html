@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyemeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/adminPage.css" th:href="@{Styles/adminPage.css}">
+    <title>Admin Page</title>
+</head>
+<body>
+    <link th:href='@{https://fonts.googleapis.com/css?family=Lato:400,300,700}' rel='stylesheet' type='text/css'>
+
+<div class="app-container">
+  
+  
+  <div class="app-view">
+    
+    <nav class="utility-bar">
+      <div class="utility-bar__inner">
+        <ul class="utility-bar__list">
+          <li class="utility-bar__list-item">
+            <a href="#" class="utility-bar__item-link">
+
+            </a>
+          </li>
+          <li class="utility-bar__list-item">
+            <a href="#" class="utility-bar__item-link">
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="utility-bar__account">
+          <span class="utility-bar__account-avatar"></span>
+          <span class="utility-bar__account-name">Keenan Staffieri</span>
+        </a>
+      </div>
+    </nav>
+    
+    <main class="content">
+      
+        <div id="questions-page" class="tabcontent" >
+            <h1>Questions</h1>
+            <p>List of Avaliable questions</p>
+            
+        <table class="question_table" >
+            
+            <thead>
+            <tr >
+                <th>Category</th>
+                <th>Difficulty Level</th>
+                <th>Question Title</th>
+                <th>Option1</th>
+                <th>Option2</th>
+                <th>Option3</th>
+                <th>Option4</th>
+                <th>Right Answer</th>
+                <th>Actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each ="question: ${allQuestions}">
+                <td th:text="${question.category}">Category</td>
+                <td th:text="${question.difficultyLevel}">Id</td>
+                <td th:text="${question.questionTitle}">Question Title</td>
+                <td th:text="${question.option1}">Option1</td>
+                <td th:text="${question.option2}">Option2</td>
+                <td th:text="${question.option3}">Option3</td>
+                <td th:text="${question.option4}">Option4</td>
+                <td th:text="${question.rightAnswer}">Right Answer</td>
+                <td>
+                    <button class="btn btn-delete"><a th:href="@{'/question/edit/' +${question.id}}">Edit</a></button>
+                    <button class="btn"><a th:href="@{'/question/delete/' +${question.id}}">Delete</a></button>
+                </td>
+            </tr>
+            
+            
+            </tbody>
+        </table>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+
+            <a href="addQuestion"><button type="submit">Add Question</button></a>
+
+        </div>
+
+
+    </main>
+    
+  </div>
+  
+</div>
+
+</body>
+</html>

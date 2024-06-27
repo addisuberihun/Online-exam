@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/student.css">
+    <title>Student Page - Online Examination</title>
+
+</head>
+<body>
+<div class="navbar">
+    <a href="home">Home</a>
+
+
+</div>
+
+<div class="container">
+    <h1>Welcome, <span th:text="${email}"></span></h1>
+
+    <a href="quiz" class="button">Start Exam</a>
+</div>
+
+<footer>
+    &copy; 2024 Online Examination Portal. All rights reserved.
+</footer>
+</body>
+</html>

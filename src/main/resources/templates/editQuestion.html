@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thyemeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles/edit.css">
+    <title>Edit Question</title>
+</head>
+<body>
+<form th:action="@{'/question/update/' +${editQuestion.id}}" method="put">
+    <div>
+        <p>Add the category of the question</p>
+        <input name="category" th:value="${editQuestion.category}">
+    </div>
+    <div>
+        <p>Add the difficulty level</p>
+        <input name="difficultyLevel" th:value="${editQuestion.difficultyLevel}">
+    </div>
+    <div class="input-group">
+        <p>Add the question</p>
+        <input name = "questionTitle" th:value="${editQuestion.questionTitle}">
+    </div>
+    <div class="input-group">
+        <p>Add the first option</p>
+        <input name = "option1" th:value="${editQuestion.option1}">
+    </div>
+    <div class="input-group">
+        <p>Add the second option</p>
+        <input name = "option2" th:value="${editQuestion.option2}" >
+    </div>
+    <div class="input-group">
+        <p>Add the third option</p>
+        <input name = "option3" th:value="${editQuestion.option3}">
+    </div>
+    <div class="input-group">
+        <p>Add the fourth option</p>
+        <input name = "option4" th:value="${editQuestion.option4}">
+    </div>
+    <div class="input-group">
+        <p>Add the right answer</p>
+        <input name = "rightAnswer" th:value="${editQuestion.rightAnswer}">
+    </div>
+    <button>submit</button>
+
+</form>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles/edit.css">
+    <title>Edit Question</title>
+</head>
+<body>
+<form th:action="@{'/question/update/' +${editQuestion.id}}" method="put">
+    <div>
+        <p>Edit the name</p>
+        <input name="category" th:value="${editQuestion.category}">
+    </div>
+    <div>
+        <p>Edit the Email</p>
+        <input name="difficultyLevel" th:value="${editQuestion.difficultyLevel}">
+    </div>
+    <div class="input-group">
+        <p>Edit the password</p>
+        <input name = "questionTitle" th:value="${editQuestion.questionTitle}">
+    </div>
+
+    <button>submit</button>
+
+</form>
+
+</body>
+</html>

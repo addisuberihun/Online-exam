@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyemeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/adminPage.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+<div class="app-container">
+  
+  
+  <div class="app-view">
+    
+    <nav class="utility-bar">
+      <div class="utility-bar__inner">
+        <ul class="utility-bar__list">
+          <li class="utility-bar__list-item">
+            <a href="#" class="utility-bar__item-link">
+
+            </a>
+          </li>
+          <li class="utility-bar__list-item">
+            <a href="#" class="utility-bar__item-link">
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="utility-bar__account">
+          <span class="utility-bar__account-avatar"></span>
+          <span class="utility-bar__account-name">Keenan Staffieri</span>
+        </a>
+      </div>
+    </nav>
+    
+    <main class="content">
+      <div id ="dashboard-page" style="display: none;">
+          <h1>Welcome</h1>
+      </div>
+        <div id="student-page" class="tabcontent" >
+            <h1>Students</h1>
+            <p>List of registered Students</p>
+                
+            <table class="student_table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="user: ${allUser}">
+                  <td th:text="${user.name}">name</td>
+                  <td th:text="${user.email}">email</td>
+                  <td th:text="${user.password}">password</td>
+                  <td>
+                    <button class="btn btn-delete"><a th:href="@{'/user/edit/' +${user.id}}">Edit</a></button>
+                    <button class="btn"><a th:href="@{'/user/delete/' +${user.id}}">Delete</a></button>
+                  </td>
+                </tr>
+               
+               
+              </tbody>
+            </table>
+        </div>
+
+      
+            
+    
+
+
+    </main>
+    
+  </div>
+  
+</div>
+    <script src="adminPage.js"></script>
+</body>
+</html>
